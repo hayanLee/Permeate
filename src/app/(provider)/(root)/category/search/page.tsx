@@ -1,5 +1,6 @@
 'use client';
 
+import SearchHeader from '@/components/SearchPage';
 import { CATEGORY_SEARCH_RESULT_PATHNAME } from '@/constant/pathname';
 import useRelatedSearchQuery from '@/hooks/query/useRelatedSearchQuery';
 import useAlert from '@/hooks/useAlert';
@@ -76,6 +77,8 @@ const SearchPage = () => {
 
   return (
     <div>
+      <SearchHeader />
+
       <section className="flex justify-center items-center self-stretch">
         <SearchInput
           search={search}

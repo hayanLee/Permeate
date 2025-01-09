@@ -1,6 +1,7 @@
 'use client';
 
 import Loading from '@/components/Loading';
+import SearchHeader from '@/components/SearchPage';
 import Toggle from '@/components/Toggle';
 import { Accordion } from '@/components/ui/accordion';
 import { CATEGORY_SEARCH_PATHNAME, CATEGORY_SEARCH_RESULT_PATHNAME } from '@/constant/pathname';
@@ -17,6 +18,8 @@ const CategoryPage = () => {
 
   return (
     <div>
+      <SearchHeader />
+
       <Link href={CATEGORY_SEARCH_PATHNAME}>
         <section className="flex justify-center items-center self-stretch">
           <div className="relative w-full ml-11 mr-11">

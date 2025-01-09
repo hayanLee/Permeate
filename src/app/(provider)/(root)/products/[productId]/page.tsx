@@ -9,6 +9,7 @@ import { Accordion } from '@/components/ui/accordion';
 import { createClient } from '@/supabase/server';
 import infos from '@@/src/mockup/deliveryInfo.json';
 import Footer from '../../_components/Footer';
+import Header from '../../_components/Header';
 import DeliveryOptions from '../_components/DeliveryOptions';
 import { Paying, Share, Wish } from '../_components/DetailButtons';
 import DetailTabs from '../_components/DetailTabs';
@@ -31,6 +32,10 @@ const ProductDetailPage = async ({ params }: Params) => {
 
   return (
     <div className="relative">
+      <div className="sticky top-0 z-40">
+        <Header />
+      </div>
+
       <BrandBanner>
         <span className="text-white">{product.Brand.krName ?? ''}</span>
         <span className="text-white">{product.brandId}</span>

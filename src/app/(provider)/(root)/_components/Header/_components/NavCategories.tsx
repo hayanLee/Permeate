@@ -1,3 +1,4 @@
+'use client';
 import { BRANDS, CATEGORY_SEARCH_RESULT_PATHNAME, EVENT, HOME, SUPPORT } from '@/constant/pathname';
 import useAlert from '@/hooks/useAlert';
 import { cn } from '@/utils/cn';
