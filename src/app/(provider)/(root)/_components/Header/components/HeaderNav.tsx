@@ -7,25 +7,23 @@ import MenubarSVG from '@@/public/header/header_menubar.svg';
 import Logo from '@@/public/header/Logo.svg';
 import PersonSVG from '@@/public/header/person.svg';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
-interface HeaderNavProps {
-  isBackBtn?: boolean;
-}
-
-const HeaderNav = ({ isBackBtn = false }: HeaderNavProps) => {
+const HeaderNav = () => {
   const router = useRouter();
+  const pathname = usePathname();
+  const isMainPage = pathname === '/';
   const handleBackBtn = () => router.back();
 
   return (
-    <div className="px-4 py-7 flex items-center bg-white">
+    <div className="p-5 flex items-center">
       <div className="flex-1">
-        {isBackBtn ? (
-          <Arrow onClick={handleBackBtn} className="cursor-pointer" />
-        ) : (
-          <Link href={CATEGORY}>
+        {isMainPage ? (
+          <Link href={CATEGORY} className="inline-block align-middle">
             <MenubarSVG />
           </Link>
+        ) : (
+          <Arrow onClick={handleBackBtn} className="cursor-pointer" />
         )}
       </div>
 

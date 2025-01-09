@@ -27,7 +27,7 @@ const NavCategories = () => {
   };
 
   return (
-    <ul className="mx-[30px] flex justify-between">
+    <ul className="mx-5 flex justify-between">
       {LINKS.map((nav) => {
         const isActive = activeLink === nav.title;
         return (

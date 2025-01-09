@@ -5,12 +5,12 @@ import { BannerSlide, CategoryProducts, CategorySection, CurrentProducts, MdRevi
 import { EventLinkCard } from '@/components/Card';
 import Footer from './_components/Footer';
 import Header from './_components/Header';
-import TopBanner from './_components/Header/_components/TopBanner';
+import KakaoTopBanner from './_components/Header/components/KakaoTopBanner';
 
 const RootPage = () => {
   return (
     <div>
-      <TopBanner />
+      <KakaoTopBanner />
       <div className="sticky top-0 z-40">
         <Header />
       </div>

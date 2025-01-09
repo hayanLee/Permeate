@@ -23,7 +23,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
         </div>
       </div>
 
-      <div className="relative bg-white w-full max-w-[600px] h-full max-h-screen overflow-scroll flex flex-col">
+      <div className="relative bg-white w-full max-w-[500px] h-full max-h-screen overflow-scroll flex flex-col">
         <div>{children}</div>
       </div>
     </div>
