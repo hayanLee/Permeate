@@ -1,11 +1,11 @@
 'use client';
 
+import LeftArrowIcon from '@/components/Icons/Arrow/LeftArrowIcon';
+import CartIcon from '@/components/Icons/CartIcon';
+import HamburgerIcon from '@/components/Icons/HamburgerIcon';
+import PersonIcon from '@/components/Icons/PersonIcon';
 import { CART, CATEGORY, HOME, MYPAGE } from '@/constant/pathname';
-import Arrow from '@@/public/arrow/arrow-left.svg';
-import BasketSVG from '@@/public/header/basket.svg';
-import MenubarSVG from '@@/public/header/header_menubar.svg';
 import Logo from '@@/public/header/Logo.svg';
-import PersonSVG from '@@/public/header/person.svg';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
@@ -20,10 +20,10 @@ const HeaderNav = () => {
       <div className="flex-1">
         {isMainPage ? (
           <Link href={CATEGORY} className="inline-block align-middle">
-            <MenubarSVG />
+            <HamburgerIcon />
           </Link>
         ) : (
-          <Arrow onClick={handleBackBtn} className="cursor-pointer" />
+          <LeftArrowIcon onClick={handleBackBtn} className="cursor-pointer" />
         )}
       </div>
 
@@ -35,10 +35,10 @@ const HeaderNav = () => {
 
       <div className="flex-1 flex justify-end items-center gap-x-5">
         <Link href={CART}>
-          <BasketSVG />
+          <CartIcon />
         </Link>
         <Link href={MYPAGE}>
-          <PersonSVG />
+          <PersonIcon />
         </Link>
       </div>
     </div>

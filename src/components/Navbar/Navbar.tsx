@@ -1,9 +1,10 @@
 'use client';
 import { HOME } from '@/constant/pathname';
-import BackButton from '@@/public/arrow/arrow-left.svg';
-import Home from '@@/public/home.svg';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import LeftArrowIcon from '../Icons/Arrow/LeftArrowIcon';
+import HomeIcon from '../Icons/HomeIcon';
+
 interface NavbarProps {
   title: string;
   isHome?: boolean;
@@ -11,15 +12,16 @@ interface NavbarProps {
 
 const Navbar = ({ title, isHome }: NavbarProps) => {
   const router = useRouter();
+  const handleGoback = () => router.back();
   return (
     <div className="flex items-center relative p-5 text-[20px] tracking-[6px] justify-between">
-      <BackButton className="cursor-pointer" onClick={() => router.back()} />
+      <LeftArrowIcon className="cursor-pointer" onClick={handleGoback} />
 
       <h1 className="text-center grow">{title}</h1>
 
       {isHome ? (
-        <Link href={HOME} className="ml-auto ">
-          <Home className="cursor-pointer" />
+        <Link href={HOME} className="ml-auto">
+          <HomeIcon className="cursor-pointer" />
         </Link>
       ) : (
         <div className="w-5"></div>
