@@ -25,7 +25,7 @@ const BannerSlide = () => {
   }, [api]);
 
   return (
-    <div className="h-[600px] relative">
+    <div className="h-[500px] relative">
       <Carousel
         plugins={[
           Autoplay({
@@ -45,15 +45,15 @@ const BannerSlide = () => {
                   <Image
                     className="w-h-full object-cover"
                     src={item.ImageURL}
-                    width={600}
-                    height={600}
+                    width={500}
+                    height={500}
                     alt={`메인 배너${idx + 1}`}
                     loading="eager"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 600px"
+                    objectFit="true"
                   />
-                  <div className="absolute left-8 bottom-[51px]">
-                    <h2 className="text-3xl font-bold text-white">{item.title}</h2>
-                    <p className="text-2xl font-normal text-white mt-5">{item.subTitle}</p>
+                  <div className="absolute bottom-[51px] flex flex-col items-start w-full px-8">
+                    <h2 className="text-2xl font-bold text-white">{item.title}</h2>
+                    <p className="text-xl font-normal text-white mt-5">{item.subTitle}</p>
                   </div>
                 </div>
               </Link>
