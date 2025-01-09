@@ -3,7 +3,7 @@ import Banner1 from '@/assets/events/event1.png';
 import Banner2 from '@/assets/events/event2.png';
 import Banner3 from '@/assets/events/event3.png';
 import Banner4 from '@/assets/events/event4.png';
-import BrandBanner from '@/components/BrandBanner';
+import HighlightBanner from '@/components/HighlightBanner';
 import useAlert from '@/hooks/useAlert';
 import Image from 'next/image';
 
@@ -14,11 +14,11 @@ const EventPage = () => {
   const handleClick = () => showInfoAlert('준비중입니다!');
   return (
     <div>
-      <BrandBanner>
+      <HighlightBanner>
         <div className="w-full flex justify-center items-center text-xl font-bold">
           <span className="text-white">이벤트</span>
         </div>
-      </BrandBanner>
+      </HighlightBanner>
 
       <div className="flex flex-col items-center justify-center gap-y-10 my-10">
         {events.map((Banner, index) => (

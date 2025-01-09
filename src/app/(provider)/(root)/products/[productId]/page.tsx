@@ -1,12 +1,10 @@
 import Bread from '@/components/Bread';
-import { Params, Product } from '@/types/products';
-
-import BrandBanner from '@/components/BrandBanner';
-
+import HighlightBanner from '@/components/HighlightBanner';
 import { CurrentProducts, MdReviews, ProductSlide } from '@/components/Sliders';
 import Toggle from '@/components/Toggle';
 import { Accordion } from '@/components/ui/accordion';
 import { createClient } from '@/supabase/server';
+import { Params, Product } from '@/types/products';
 import infos from '@@/src/mockup/deliveryInfo.json';
 import Footer from '../../_components/Footer';
 import Header from '../../_components/Header';
@@ -36,10 +34,10 @@ const ProductDetailPage = async ({ params }: Params) => {
         <Header />
       </div>
 
-      <BrandBanner>
+      <HighlightBanner>
         <span className="text-white">{product.Brand.krName ?? ''}</span>
         <span className="text-white">{product.brandId}</span>
-      </BrandBanner>
+      </HighlightBanner>
       <div className="relative aspect-square">
         <ProductSlide Images={Images} />
       </div>

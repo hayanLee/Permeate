@@ -2,7 +2,7 @@
 import Brand1 from '@/assets/brands/brand1.png';
 import Brand2 from '@/assets/brands/brand2.png';
 import Brand3 from '@/assets/brands/brand3.png';
-import BrandBanner from '@/components/BrandBanner';
+import HighlightBanner from '@/components/HighlightBanner';
 import useAlert from '@/hooks/useAlert';
 import Image from 'next/image';
 
@@ -14,11 +14,11 @@ const BrandsPage = () => {
   return (
     <>
       <div className="min-h-screen">
-        <BrandBanner>
+        <HighlightBanner>
           <div className="w-full flex justify-center items-center text-xl font-bold">
             <span className="text-white">브랜드관</span>
           </div>
-        </BrandBanner>
+        </HighlightBanner>
 
         <div className="flex flex-col items-center justify-center gap-y-10 my-10">
           {brands.map((Brand, index) => (

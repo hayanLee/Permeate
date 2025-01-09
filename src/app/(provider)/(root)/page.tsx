@@ -1,8 +1,12 @@
-import BrandBanner from '@/components/BrandBanner';
-
-import { BannerSlide, CategoryProducts, CategorySection, CurrentProducts, MdReviews } from '@/components/Sliders';
-
-import { EventLinkCard } from '@/components/Card';
+import HighlightBanner from '@/components/HighlightBanner';
+import {
+  BannerSlide,
+  CategoryProducts,
+  CategorySection,
+  CurrentProducts,
+  MdReviews,
+  WidgetSlide
+} from '@/components/Sliders';
 import Footer from './_components/Footer';
 import Header from './_components/Header';
 import KakaoTopBanner from './_components/Header/components/KakaoTopBanner';
@@ -15,16 +19,16 @@ const RootPage = () => {
         <Header />
       </div>
 
-      <main className="max-w-[600px] mx-auto my-0 h-full w-full overflow-hidden">
+      <main className="max-w-[600px] mx-auto my-0 h-full w-full overflow-hidden bg-white">
         <BannerSlide />
-        <EventLinkCard />
+        <WidgetSlide />
 
         <div className="flex flex-col gap-y-16">
-          <BrandBanner>
+          <HighlightBanner>
             <div className="w-full flex-center text-xl font-bold">
               <span className="text-white">행사중인 브랜드 한번에 몰아보기 &gt;</span>
             </div>
-          </BrandBanner>
+          </HighlightBanner>
 
           {/* 현재 판매중인 상품 */}
           <CurrentProducts title={'지금 가장 인기 있는 제품'} option="order" />
