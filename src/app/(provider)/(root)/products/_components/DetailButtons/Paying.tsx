@@ -105,7 +105,7 @@ const Paying = ({ size, category, product }: PayingProps) => {
       </div>
 
       <div
-        className={cx('p-5-2 w-full max-w-[600px] fixed bottom-0 z-50 bg-white border-t-[1.5px] border-[#B3B3B3]', {
+        className={cx('p-5-2 w-full max-w-[500px] fixed bottom-0 z-50 bg-white border-t-[1.5px] border-[#B3B3B3]', {
           'rounded-t-lg': isSelected,
           'rounded-none': !isSelected
         })}
