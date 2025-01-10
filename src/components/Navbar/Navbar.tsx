@@ -2,7 +2,7 @@
 import { HOME } from '@/constant/pathname';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import LeftArrowIcon from '../Icons/Arrow/LeftArrowIcon';
+import LeftArrowIcon from '../Icons/ArrowIcon';
 import HomeIcon from '../Icons/HomeIcon';
 
 interface NavbarProps {

@@ -1,14 +1,12 @@
 'use client';
+
+import HeartIcon from '@/components/Icons/HeartIcon';
 import { Button } from '@/components/ui/button';
 import { useWishesMutation } from '@/hooks/mutation';
 import { useWishesQuery } from '@/hooks/query';
 import useAuthQuery from '@/hooks/query/useAuthQuery';
 import useAlert from '@/hooks/useAlert';
 import { Params } from '@/types/products';
-import BlackWishSVG from '@@/public/heart/black-wish-icon.svg';
-import WishSVG from '@@/public/heart/default-wish-icon.svg';
-import SelectWishSVG from '@@/public/heart/select-wish-icon.svg';
-import MainWishSVG from '@@/public/heart/wish-icon.svg';
 import { useParams, useRouter } from 'next/navigation';
 
 const Wish = ({ inner = true }: { inner?: boolean }) => {
@@ -32,7 +30,7 @@ const Wish = ({ inner = true }: { inner?: boolean }) => {
     return (
       <Button size="xl" variant={getLikes?.data ? 'default' : 'defaultline'} onClick={handleWish}>
         <div className="box-container-center">
-          <span>{getLikes?.data ? <SelectWishSVG /> : <WishSVG />}</span>
+          <span>{getLikes?.data ? <HeartIcon /> : <HeartIcon isButton />}</span>
           <span>좋아요</span>
           <span className="font-bold">{getLikes?.count}</span>
         </div>
@@ -41,7 +39,7 @@ const Wish = ({ inner = true }: { inner?: boolean }) => {
   } else {
     return (
       <div className="flex-center flex-col w-8 hover:cursor-pointer" onClick={handleWish}>
-        <span>{getLikes?.data ? <BlackWishSVG /> : <MainWishSVG />}</span>
+        <span>{getLikes?.data ? <HeartIcon color="black" size={16} /> : <HeartIcon size={16} />}</span>
         <span className="text-sm">{getLikes?.count.toLocaleString()}</span>
       </div>
     );

@@ -5,12 +5,11 @@ import { WishProduct } from '@/hooks/query/mypage/useUserWishesQuery';
 import useAuthQuery from '@/hooks/query/useAuthQuery';
 import useAlert from '@/hooks/useAlert';
 import { Product } from '@/types/products';
-import BlueWishSVG from '@@/public/heart/blue-wish-icon.svg';
-import WishSVG from '@@/public/heart/wish-icon.svg';
 import { useQueryClient } from '@tanstack/react-query';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import HeartIcon from '../Icons/HeartIcon';
 
 export interface ProductProps {
   product: Product | WishProduct;
@@ -79,7 +78,7 @@ const ProductCard = ({ product }: ProductProps) => {
           className="absolute bottom-2 right-2 z-20 w-[30px] h-[30px] flex items-center justify-center hover:cursor-pointer"
           onClick={(e) => handleWish(e)}
         >
-          {userLike && loggedUser?.id !== undefined ? <BlueWishSVG /> : <WishSVG />}
+          {userLike && loggedUser?.id !== undefined ? <HeartIcon color="blue" size={16} /> : <HeartIcon size={16} />}
         </div>
       </div>
 

@@ -5,7 +5,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
   return (
     <div className="max-h-screen flex justify-center gap-[45px]">
       {/* 배경화면 */}
-      <Image src="/main_image.webp" fill priority alt="background" loading="eager" />
+      <Image src="/img/main_image.webp" fill priority alt="background" loading="eager" />
 
       {/* 사이드 배너 */}
       <div className="flex-col justify-center gap-3 xl:flex hidden">

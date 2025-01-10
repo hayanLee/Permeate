@@ -4,7 +4,7 @@ import Loading from '@/components/Loading';
 import Navbar from '@/components/Navbar';
 import useUserWishesQuery, { UserWish } from '@/hooks/query/mypage/useUserWishesQuery';
 import { cn } from '@/utils/cn';
-import Banner from '@@/public/banner/tempBanner.svg';
+import Image from 'next/image';
 import { useState } from 'react';
 
 const WishListPage = () => {
@@ -18,7 +18,11 @@ const WishListPage = () => {
   return (
     <div>
       <Navbar title="찜한 상품" isHome />
-      <Banner className="mx-auto my-4" />
+      <div className="h-[140px] py-3 px-5">
+        <div className="w-full h-full relative">
+          <Image src={'/banner/events/event_banner_1.png'} alt="이벤트 배너 이미지" fill />
+        </div>
+      </div>
 
       <div className="px-[50px]">
         <div className="flex flex-col justify-between py-5">

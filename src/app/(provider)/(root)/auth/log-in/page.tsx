@@ -6,8 +6,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { AUTH_SIGN_UP_PATHNAME } from '@/constant/pathname';
 import { useAuthMutation } from '@/hooks/mutation';
 import useAlert from '@/hooks/useAlert';
-import Banner from '@@/public/banner/tempBanner.svg';
 import { Provider } from '@supabase/supabase-js';
+import Image from 'next/image';
 import Link from 'next/link';
 import { FormEventHandler, useRef } from 'react';
 const LogInPage = () => {
@@ -94,7 +94,11 @@ const LogInPage = () => {
           </div>
         </Tabs>
       </div>
-      <Banner className="mx-auto my-4" />
+      <div className="h-[140px] py-3 px-5 border-b">
+        <div className="w-full h-full relative">
+          <Image src={'/banner/events/event_banner_1.png'} alt="이벤트 배너 이미지" fill />
+        </div>
+      </div>
     </>
   );
 };

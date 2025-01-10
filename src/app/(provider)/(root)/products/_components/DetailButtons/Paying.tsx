@@ -1,8 +1,8 @@
 'use client';
-import { useRouter } from 'next/navigation';
-
+import ArrowIcon from '@/components/Icons/ArrowIcon';
+import CartIcon from '@/components/Icons/CartIcon';
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogFooter } from '@/components/ui/dialog';
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -12,9 +12,8 @@ import {
 import useAlert from '@/hooks/useAlert';
 import useLocalCart from '@/hooks/useLocalCart';
 import { Product } from '@/types/products';
-import ArrowBSVG from '@@/public/arrow/arrow-bold-bottom.svg';
-import CartSVG from '@@/public/cart-icon.svg';
 import { cx } from 'class-variance-authority';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { Wish } from '.';
 type PayingProps = { size: string[]; category: string; product: Product };
@@ -113,7 +112,12 @@ const Paying = ({ size, category, product }: PayingProps) => {
         {isSelected ? (
           <div className="z-50">
             <div className="flex-col-10 justify-center items-center">
-              <ArrowBSVG className="hover:cursor-pointer" onClick={handleSelectedMode} />
+              <ArrowIcon
+                className="-rotate-90 hover:cursor-pointer"
+                height={15}
+                color="#B3B3B3"
+                onClick={handleSelectedMode}
+              />
               <DropdownMenu>
                 <DropdownMenuTrigger className="flex justify-between items-center p-5-2 border border-[#B3B3B3] w-full text-start text-xs text-[#B3B3B3]">
                   <span className="text-xl">{selectedSize}</span>
@@ -154,23 +158,24 @@ const Paying = ({ size, category, product }: PayingProps) => {
       </div>
 
       <Dialog open={isDialogOpen}>
-        <DialogContent className="flex flex-col items-center gap-[29px] top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[400px] pt-[54px] px-5 pb-2 rounded">
-          <DialogTitle className="hidden" />
-          <CartSVG />
-          <p className="text-[20px] text-center">
-            상품이 장바구니에 담겼습니다.
-            <br />
-            바로 확인하시겠습니까?
-          </p>
+        <DialogContent className="flex flex-col items-center justify-center top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[400px] rounded aspect-square gap-0">
+          <div className="flex flex-col items-center justify-center grow gap-10">
+            <CartIcon size={70} color="blue" />
+            <p className="text-[20px] text-center">
+              상품이 장바구니에 담겼습니다.
+              <br />
+              바로 확인하시겠습니까?
+            </p>
+          </div>
 
-          <div className="flex justify-between items-center gap-2.5 w-full">
+          <DialogFooter className="w-full">
             <Button onClick={handleDialogClose} variant="defaultline" className="w-full h-[64px]">
               취소
             </Button>
             <Button onClick={() => router.push('/cart')} variant="default" className="w-full h-[64px]">
               확인
             </Button>
-          </div>
+          </DialogFooter>
         </DialogContent>
       </Dialog>
     </>

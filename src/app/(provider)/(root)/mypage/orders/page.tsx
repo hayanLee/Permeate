@@ -5,7 +5,7 @@ import { Accordion } from '@/components/ui/accordion';
 import useOrderListQuery from '@/hooks/query/mypage/useOrderListQuery';
 import { MyOrder } from '@/types/myPage/order';
 import { cn } from '@/utils/cn';
-import Banner from '@@/public/banner/tempBanner.svg';
+import Image from 'next/image';
 import { useState } from 'react';
 import OrderCard from './_components/OrderCard';
 
@@ -19,7 +19,12 @@ const OrderListPage = () => {
   return (
     <div>
       <Navbar title="주문/배송내역" isHome />
-      <Banner className="mx-auto my-4" />
+
+      <div className="h-[140px] py-3 px-5">
+        <div className="w-full h-full relative">
+          <Image src={'/banner/events/event_banner_1.png'} alt="이벤트 배너 이미지" fill />
+        </div>
+      </div>
 
       <div className="px-[50px]">
         <div className="flex justify-between py-5">

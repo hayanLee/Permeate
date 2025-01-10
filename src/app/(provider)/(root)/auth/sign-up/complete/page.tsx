@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { HOME } from '@/constant/pathname';
 import useAuthQuery from '@/hooks/query/useAuthQuery';
-import Profile from '@@/public/profile/profile-lg.svg';
 import Link from 'next/link';
 function SignUpCompletePage() {
   const { data: loggedUser, isPending } = useAuthQuery();
@@ -33,7 +32,6 @@ function SignUpCompletePage() {
         </Tabs>
 
         <div className="flex flex-col items-center justify-center mt-20">
-          <Profile />
           <p className="text-xl font-semibold py-5">{name || full_name} 회원님</p>
           <p className="text-muted/">{phone}</p>
           <Button asChild className="bg-accent mt-12 ">

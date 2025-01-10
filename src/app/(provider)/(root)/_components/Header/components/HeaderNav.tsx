@@ -1,9 +1,11 @@
 'use client';
 
-import LeftArrowIcon from '@/components/Icons/Arrow/LeftArrowIcon';
+import LeftArrowIcon from '@/components/Icons/ArrowIcon';
 import CartIcon from '@/components/Icons/CartIcon';
 import PersonIcon from '@/components/Icons/PersonIcon';
 import { CART, CATEGORY, HOME, MYPAGE } from '@/constant/pathname';
+import HamburgerIcon from '@@/public/icon/hamburger.svg';
+import PermeateLogo from '@@/public/logo/permeate.svg';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
@@ -18,7 +20,7 @@ const HeaderNav = () => {
       <div className="flex-1">
         {isMainPage ? (
           <Link href={CATEGORY} className="inline-block align-middle">
-            <img src="/hamburger.svg" />
+            <HamburgerIcon />
           </Link>
         ) : (
           <LeftArrowIcon onClick={handleBackBtn} className="cursor-pointer" />
@@ -27,7 +29,7 @@ const HeaderNav = () => {
 
       <div className="grow text-center">
         <Link href={HOME}>
-          <img src="/logo/permeate.svg" className="inline-block" />
+          <PermeateLogo className="inline-block" />
         </Link>
       </div>
 

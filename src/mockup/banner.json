@@ -1,31 +1,31 @@
 [
   {
-    "ThumbnailImg": "/banner/event/first.svg",
+    "ThumbnailImg": "/banner/widgets/first.svg",
     "eventLink": "https://www.google.com",
     "title": "첫구매 혜택"
   },
   {
-    "ThumbnailImg": "/banner/event/coupon.svg",
+    "ThumbnailImg": "/banner/widgets/coupon.svg",
     "eventLink": "https://www.google.com",
     "title": "쿠폰증정"
   },
   {
-    "ThumbnailImg": "/banner/event/event.svg",
+    "ThumbnailImg": "/banner/widgets/event.svg",
     "eventLink": "https://www.google.com",
     "title": "이벤트"
   },
   {
-    "ThumbnailImg": "/banner/event/discount.svg",
+    "ThumbnailImg": "/banner/widgets/discount.svg",
     "eventLink": "https://www.google.com",
     "title": "Up to 50%"
   },
   {
-    "ThumbnailImg": "/banner/event/sale.svg",
+    "ThumbnailImg": "/banner/widgets/sale.svg",
     "eventLink": "https://www.google.com",
     "title": "세일"
   },
   {
-    "ThumbnailImg": "/banner/event/brand_page.svg",
+    "ThumbnailImg": "/banner/widgets/brand_page.svg",
     "eventLink": "https://www.google.com",
     "title": "브랜드페이지"
   }

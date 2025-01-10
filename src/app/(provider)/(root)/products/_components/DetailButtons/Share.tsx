@@ -1,7 +1,7 @@
 'use client';
 import { Button } from '@/components/ui/button';
 import { Product } from '@/types/products';
-import ShareSVG from '@@/public/share-icon.svg';
+import ShareSVG from '@@/public/icon/share.svg';
 import { useEffect } from 'react';
 declare global {
   interface Window {

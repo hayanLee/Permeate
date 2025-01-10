@@ -1,7 +1,6 @@
+import StarIcon from '@/components/Icons/StarIcon';
 import { AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { UserReview } from '@/hooks/query/mypage/useUserReviewsQuery';
-import FillStar from '@@/public/star/star-fill-icon.svg';
-import EmptyStar from '@@/public/star/star-icon.svg';
 import dayjs from 'dayjs';
 import { ThumbsUp } from 'lucide-react';
 import Image from 'next/image';
@@ -15,10 +14,10 @@ interface ReviewItemProps {
 const renderStars = (count: number) => {
   const fullStars = Array(count)
     .fill(null)
-    .map((_, index) => <FillStar key={`full-${index}`} />);
+    .map((_, index) => <StarIcon key={`full-${index}`} fill="#0348FF" />);
   const emptyStars = Array(5 - count)
     .fill(null)
-    .map((_, index) => <EmptyStar key={`empty-${index}`} />);
+    .map((_, index) => <StarIcon key={`empty-${index}`} />);
   return [...fullStars, ...emptyStars];
 };
 

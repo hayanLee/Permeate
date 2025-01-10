@@ -1,14 +1,12 @@
 'use client';
 
+import StarIcon from '@/components/Icons/StarIcon';
 import Pagination from '@/components/Pagination';
 import { useReviewsQuery } from '@/hooks/query';
 import useReviewsTotalImagesQuery from '@/hooks/query/useReviewsTotalImagesQuery';
 import { Params } from '@/types/products';
 import { ReviewType } from '@/types/review';
-import ArrowRRoundSVG from '@@/public/arrow/arrow-round-right.svg';
-import ProfileImg from '@@/public/profile/profile-sm.svg';
-import StarFillSVG from '@@/public/star/star-fill-icon.svg';
-import StarSVG from '@@/public/star/star-icon.svg';
+import RoundedArrow from '@@/public/icon/rounded-arrow.svg';
 import { cx } from 'class-variance-authority';
 import Image from 'next/image';
 import { useParams, useRouter } from 'next/navigation';
@@ -42,14 +40,18 @@ const ReviewPage = () => {
 
   const handleReviewWish = (reviewId: string) => {};
   const renderStars = (score: number) =>
-    Array.from({ length: 5 }, (_, index) => (index < score ? <StarFillSVG key={index} /> : <StarSVG key={index} />));
+    Array.from({ length: 5 }, (_, index) =>
+      index < score ? <StarIcon key={`full-${index}`} fill="#0348FF" /> : <StarIcon key={`empty-${index}`} />
+    );
 
   const renderReviewItem = (review: ReviewType) => (
-    <div className="h-[400px]" key={review.reviewId}>
-      <div className="grid grid-cols-[60px_1fr] grid-rows-2 gap-x-3">
-        <ProfileImg className="w-h-60 row-span-2 rounded-full" />
-        <span className="font-bold">{review.User.name}</span>
-        <span className="text-sm">{review.Product.notes.join(' | ')}</span>
+    <div className="h-auto flex flex-col gap-4" key={review.reviewId}>
+      <div className="flex items-center gap-3">
+        <Image width={60} height={60} src={'/profile/default-profile.png'} alt="기본 프로필이미지" />
+        <div className="flex flex-col">
+          <span className="font-bold">{review.User.name}</span>
+          <span className="text-sm">{review.Product.notes.join(' | ')}</span>
+        </div>
       </div>
       <div className="min-h-[213px] flex-col-10">
         <div className="flex-row-10">
@@ -87,7 +89,8 @@ const ReviewPage = () => {
           className="flex-center flex-col  hover:cursor-pointer w-h-132"
           onClick={() => router.push(`/products/${productId}/review/images`)}
         >
-          <ArrowRRoundSVG />
+          <RoundedArrow />
+
           <span className="text-gray-500">전체 보기</span>
         </div>
       </div>
