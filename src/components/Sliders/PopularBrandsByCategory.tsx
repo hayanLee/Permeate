@@ -1,5 +1,4 @@
 'use client';
-import CategoryMore from '@/components/CategoryMore';
 import { Sliders } from '@/components/Sliders';
 import { Skeleton } from '@/components/ui/skeleton';
 import useBrandsQuery from '@/hooks/query/useBrandsQuery';
@@ -7,12 +6,12 @@ import useProductsQuery from '@/hooks/query/useProductsQuery';
 import { Product } from '@/types/products';
 import Image from 'next/image';
 
-interface CategorySectionProps {
+interface PopularBrandsByCategoryProps {
   title: string;
   count: number;
 }
 
-const CategorySection = ({ title, count }: CategorySectionProps) => {
+const PopularBrandsByCategory = ({ title, count }: PopularBrandsByCategoryProps) => {
   const { data: products, isPending: isProductsPending } = useProductsQuery('order');
   const brandIds =
     products
@@ -33,16 +32,16 @@ const CategorySection = ({ title, count }: CategorySectionProps) => {
     );
 
   return (
-    <div className="flex flex-col p-5-2">
-      <CategoryMore title={title} />
+    <div className="flex flex-col px-5">
+      <h2 className="text-xl font-bold flex items-center gap-1">{title}</h2>
 
-      <div className="w-full h-[300px] rounded mb-[16px] mt-4 relative">
+      <div className="w-full h-[250px] mb-[16px] mt-4 relative">
         <Image
           src={'https://img.29cm.co.kr/item/202401/11eebe9d80e9739391ebb5f8eb5447c1.jpg?width=700'}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
           alt="인기 급상승 제품 이미지1"
-          loading="eager"
+          loading="lazy"
+          className="rounded-md"
         />
       </div>
 
@@ -51,4 +50,4 @@ const CategorySection = ({ title, count }: CategorySectionProps) => {
   );
 };
 
-export default CategorySection;
+export default PopularBrandsByCategory;

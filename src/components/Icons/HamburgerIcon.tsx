@@ -1,9 +1,0 @@
-const HamburgerIcon = ({ ...styleProps }: React.SVGProps<SVGSVGElement>) => {
-  return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...styleProps}>
-      <path d="M24 19.1689H0.000675405M23.9993 10.9589H0M24 3.00146H0.000675405" stroke="#231815" />
-    </svg>
-  );
-};
-
-export default HamburgerIcon;

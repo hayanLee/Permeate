@@ -2,10 +2,8 @@
 
 import LeftArrowIcon from '@/components/Icons/Arrow/LeftArrowIcon';
 import CartIcon from '@/components/Icons/CartIcon';
-import HamburgerIcon from '@/components/Icons/HamburgerIcon';
 import PersonIcon from '@/components/Icons/PersonIcon';
 import { CART, CATEGORY, HOME, MYPAGE } from '@/constant/pathname';
-import Logo from '@@/public/header/Logo.svg';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
@@ -20,7 +18,7 @@ const HeaderNav = () => {
       <div className="flex-1">
         {isMainPage ? (
           <Link href={CATEGORY} className="inline-block align-middle">
-            <HamburgerIcon />
+            <img src="/hamburger.svg" />
           </Link>
         ) : (
           <LeftArrowIcon onClick={handleBackBtn} className="cursor-pointer" />
@@ -29,7 +27,7 @@ const HeaderNav = () => {
 
       <div className="grow text-center">
         <Link href={HOME}>
-          <Logo className="inline-block" />
+          <img src="/logo/permeate.svg" className="inline-block" />
         </Link>
       </div>
 

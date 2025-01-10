@@ -1,12 +1,12 @@
 import { Brand } from '@/types/brands';
 import Image from 'next/image';
 
-export interface CategoryProps {
+export interface BrandCardProps {
   brand: Brand & { logoURL: string };
 }
-const CategoryCard = ({ brand }: CategoryProps) => {
+const BrandCard = ({ brand }: BrandCardProps) => {
   return (
-    <div className="w-full h-[100px] rounded-[8px] relative ">
+    <div className="w-[100px] h-[100px] rounded-[8px] relative">
       <Image
         src={brand.logoURL || ''}
         fill
@@ -14,7 +14,6 @@ const CategoryCard = ({ brand }: CategoryProps) => {
         className="object-contain absolute"
         quality={20}
         loading="lazy"
-        sizes="(max-width: 768px) 162px, (max-width: 1200px) 162px, 100px"
       />
       <div className="w-full h-5 bg-[#302A28] flex-center rounded-b-[8px] absolute bottom-0 ">
         <span className="text-xs text-white">{brand.krName}</span>
@@ -23,4 +22,4 @@ const CategoryCard = ({ brand }: CategoryProps) => {
   );
 };
 
-export default CategoryCard;
+export default BrandCard;
