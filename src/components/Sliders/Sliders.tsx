@@ -1,7 +1,6 @@
 import { Brand } from '@/types/brands';
 import { Product } from '@/types/products';
-
-import { CategoryCard, ProductCard } from '../Card';
+import { BrandCard, ProductCard } from '../Card';
 import { Carousel, CarouselContent, CarouselItem } from '../ui/carousel';
 
 type SliderData = Brand | Product;
@@ -20,7 +19,7 @@ const Sliders = ({ data, count }: SlidersProps) => {
             {'productId' in item ? (
               <ProductCard key={item.productId} product={item as Product} />
             ) : (
-              <CategoryCard key={item.brandId} brand={item as Brand & { logoURL: string }} />
+              <BrandCard key={item.brandId} brand={item as Brand & { logoURL: string }} />
             )}
           </CarouselItem>
         ))}

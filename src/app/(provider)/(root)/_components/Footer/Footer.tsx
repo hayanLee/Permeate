@@ -1,5 +1,6 @@
 import Toggle from '@/components/Toggle';
-import { Accordion } from '@/components/ui/accordion';
+
+import { Accordion } from '@radix-ui/react-accordion';
 import CallInfo from './_components/CallInfo';
 import SNSInfo from './_components/SNSInfo';
 

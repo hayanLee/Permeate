@@ -2,10 +2,9 @@
 
 import { AUTH_LOG_IN_PATHNAME, CART, HOME, MYPAGE } from '@/constant/pathname';
 import useAuthQuery from '@/hooks/query/useAuthQuery';
-import LogoSVG from '@@/public/logo.svg';
-import XSVG from '@@/public/x.svg';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import CloseIcon from '../Icons/CloseIcon';
 import Loading from '../Loading';
 import MenuItem from './MenuItem';
 
@@ -23,10 +22,10 @@ const SearchHeader = () => {
     <>
       <header className="flex px-[20px] pl-[50px] justify-between items-center h-[64px] mt-[40px]">
         <Link href={HOME}>
-          <LogoSVG className="cursor-pointer" />
+          <img src="/logo/permeate.svg" className="cursor-pointer" />
         </Link>
         <button onClick={handleGoBack} className="mr-7">
-          <XSVG className="cursor-pointer" />
+          <CloseIcon className="cursor-pointer" />
         </button>
       </header>
       <section className="flex justify-start items-center self-stretch py-[20px] pr-[9px] pl-[50px] h-[64px]">

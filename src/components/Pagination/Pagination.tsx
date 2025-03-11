@@ -1,7 +1,6 @@
-import ArrowLSVG from '@@/public/arrow/pagination/arrow-left.svg';
-import ArrowRSVG from '@@/public/arrow/pagination/arrow-right.svg';
 import { cx } from 'class-variance-authority';
 import { useEffect, useState } from 'react';
+import ArrowIcon from '../Icons/ArrowIcon';
 import PageButton from './PageButton';
 interface PaginationProps {
   maxPage: number;
@@ -57,7 +56,7 @@ const Pagination = ({ maxPage, pageCountPerPage, clickListener }: PaginationProp
           '': startPage !== 1
         })}
       >
-        <ArrowLSVG />
+        <ArrowIcon />
       </button>
       {pages.slice(startPage, endPage + 1).map((page, i) => (
         <PageButton key={i} page={page} currentPage={currentPage} clickListener={pageNumberClicked} />
@@ -70,7 +69,7 @@ const Pagination = ({ maxPage, pageCountPerPage, clickListener }: PaginationProp
           '': endPage !== maxPage
         })}
       >
-        <ArrowRSVG />
+        <ArrowIcon className="rotate-180" />
       </button>
     </div>
   );

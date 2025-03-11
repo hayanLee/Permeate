@@ -14,7 +14,8 @@ import {
 import { useUserReviewsQuery } from '@/hooks/query/mypage';
 import useCouponQuery from '@/hooks/query/mypage/useCouponQuery';
 import useAuthQuery from '@/hooks/query/useAuthQuery';
-import Banner from '@@/public/banner/tempBanner.svg';
+
+import Image from 'next/image';
 import Footer from '../_components/Footer';
 import InfoCard from './_components/InfoCard';
 import LinkCard from './_components/LinkCard';
@@ -58,7 +59,13 @@ const MyMainPage = () => {
           {reviews?.length || '-'}
         </InfoCard>
       </div>
-      <Banner className="mx-auto my-4" />
+
+      <div className="h-[140px] py-3 px-5 border-b">
+        <div className="w-full h-full relative">
+          <Image src={'/banner/events/event_banner_1.png'} alt="이벤트 배너 이미지" fill />
+        </div>
+      </div>
+
       {LINKS.map((link, idx) => {
         return (
           <div key={link.title}>

@@ -14,6 +14,9 @@ const config = {
       }
     },
     extend: {
+      backgroundImage: {
+        'perme-dark': "url('/img/perme-dark.png')"
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

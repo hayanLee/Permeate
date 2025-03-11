@@ -1,12 +1,12 @@
 'use client';
 
+import SearchIcon from '@/components/Icons/SearchIcon';
+import SearchHeader from '@/components/SearchPage';
 import { CATEGORY_SEARCH_RESULT_PATHNAME } from '@/constant/pathname';
 import useRelatedSearchQuery from '@/hooks/query/useRelatedSearchQuery';
 import useAlert from '@/hooks/useAlert';
 import useRecentSearchTerms from '@/hooks/useRecentSearchTerms';
 import { allKeywords } from '@/mockup/keyword';
-import PopSearchSVG from '@@/public/pop-search.svg';
-import RecentSearchSVG from '@@/public/recentSearchButton.svg';
 import { debounce } from 'lodash';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -76,6 +76,8 @@ const SearchPage = () => {
 
   return (
     <div>
+      <SearchHeader />
+
       <section className="flex justify-center items-center self-stretch">
         <SearchInput
           search={search}
@@ -164,7 +166,7 @@ const SearchPage = () => {
             <Link href={`${CATEGORY_SEARCH_RESULT_PATHNAME}?query=${keyword}`}>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 relative overflow-hidden rounded-full flex items-center justify-center bg-zinc-400">
-                  <RecentSearchSVG className="w-6 h-6 object-cover" />
+                  <SearchIcon color="white" />
                 </div>
                 <div>
                   <span>{keyword}</span>
@@ -206,9 +208,9 @@ const SearchPage = () => {
           더보기
         </h2>
       </section>
-      <section className="cursor-pointer" onClick={() => showInfoAlert('준비중입니다')}>
+      {/* <section className="cursor-pointer" onClick={() => showInfoAlert('준비중입니다')}>
         <PopSearchSVG />
-      </section>
+      </section> */}
     </div>
   );
 };

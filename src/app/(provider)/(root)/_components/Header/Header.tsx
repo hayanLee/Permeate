@@ -1,12 +1,18 @@
-import HeaderNav from './_components/HeaderNav';
-import NavCategories from './_components/NavCategories';
+import HeaderNav from './components/HeaderNav';
+import NavCategories from './components/NavCategories';
 
-const Header = () => {
+interface HeaderProps {
+  showNavCategories?: boolean;
+}
+
+const Header = ({ showNavCategories = true }: HeaderProps) => {
   return (
-    <header className="bg-white">
-      <HeaderNav />
-      <NavCategories />
-    </header>
+    <div>
+      <header className="bg-white">
+        <HeaderNav />
+        {showNavCategories && <NavCategories />}
+      </header>
+    </div>
   );
 };
 

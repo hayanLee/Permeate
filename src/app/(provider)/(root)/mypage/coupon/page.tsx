@@ -1,9 +1,9 @@
 'use client';
+import ArrowIcon from '@/components/Icons/ArrowIcon';
 import Loading from '@/components/Loading';
 import Navbar from '@/components/Navbar';
 import useCouponQuery from '@/hooks/query/mypage/useCouponQuery';
 import useAuthQuery from '@/hooks/query/useAuthQuery';
-import Arrow from '@@/public/arrow/arrow-bottom.svg';
 import CouponCard from '../_components/CouponCard';
 import InfoCard from '../_components/InfoCard';
 import Profile from '../_components/Profile';
@@ -39,7 +39,7 @@ const CouponListPage = () => {
 
           <div className="flex items-center gap-x-2 cursor-pointer">
             <span>최근 내역 순</span>
-            <Arrow />
+            <ArrowIcon className="-rotate-90" />
           </div>
         </div>
 

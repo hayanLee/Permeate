@@ -1,5 +1,5 @@
+import SearchIcon from '@/components/Icons/SearchIcon';
 import { CATEGORY_SEARCH_RESULT_PATHNAME } from '@/constant/pathname';
-import SearchButtonSVG from '@@/public/searchButton.svg';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { ForwardedRef, forwardRef } from 'react';
@@ -43,7 +43,7 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         )}
         <Link href={`${CATEGORY_SEARCH_RESULT_PATHNAME}?query=${search}`}>
           <button onClick={handleSearchClick} className="absolute right-0 top-0 bottom-0 px-3 py-1">
-            <SearchButtonSVG />
+            <SearchIcon strokeWidth={2} />
           </button>
         </Link>
       </div>

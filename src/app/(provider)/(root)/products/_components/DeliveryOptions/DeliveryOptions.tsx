@@ -1,7 +1,6 @@
 'use client';
 
-import ArrowBIcon from '@@/public/arrow/arrow-bottom.svg';
-import ArrowRIcon from '@@/public/arrow/arrow-right.svg';
+import ArrowIcon from '@/components/Icons/ArrowIcon';
 import { cx } from 'class-variance-authority';
 import { useState } from 'react';
 const DeliveryOptions = () => {
@@ -22,8 +21,13 @@ const DeliveryOptions = () => {
       <div className="box-container">
         <span className="text-[#B3B3B3] font-bold">상품 배송 옵션</span>
         {deliveryOptions.length > 3 && (
-          <span className="flex-row-10 items-center  text-[#B3B3B3] hover:cursor-pointer" onClick={handleOnOff}>
-            배송 혜택 모두 보기 {isExpanded ? <ArrowBIcon /> : <ArrowRIcon />}
+          <span className="flex items-center text-[#B3B3B3] hover:cursor-pointer gap-2" onClick={handleOnOff}>
+            배송 혜택 모두 보기
+            {isExpanded ? (
+              <ArrowIcon className="-rotate-90" color="#B3B3B3" height={10} />
+            ) : (
+              <ArrowIcon className="rotate-180" color="#B3B3B3" height={10} />
+            )}
           </span>
         )}
       </div>

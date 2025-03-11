@@ -1,6 +1,5 @@
 'use client';
-import ArrowBIcon from '@@/public/arrow/arrow-bold-bottom.svg';
-import ArrowTIcon from '@@/public/arrow/arrow-top.svg';
+import ArrowIcon from '@/components/Icons/ArrowIcon';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -26,10 +25,20 @@ const DetailPage = ({ productDetail }: { productDetail: string }) => {
       </div>
 
       <div className="w-full absolute bottom-0 left-0 flex items-center mb-5 justify-center bg-opacity-75">
-        <button className="bg-white p-2-4 border" onClick={handleOnOff}>
-          <span className="flex items-center">
-            상품 정보 {!isExpanded ? <span>더보기 </span> : <span>접기 </span>}
-            {!isExpanded ? <ArrowBIcon /> : <ArrowTIcon />}
+        <button className="bg-white p-2.5 border flex items-center gap-2" onClick={handleOnOff}>
+          상품 정보
+          <span className="flex gap-2 items-center">
+            {isExpanded ? (
+              <>
+                접기
+                <ArrowIcon className="rotate-90" height={15} />
+              </>
+            ) : (
+              <>
+                더보기
+                <ArrowIcon className="-rotate-90" height={15} />
+              </>
+            )}
           </span>
         </button>
       </div>
