@@ -15,7 +15,7 @@ import { useUserReviewsQuery } from '@/hooks/query/mypage';
 import useCouponQuery from '@/hooks/query/mypage/useCouponQuery';
 import useAuthQuery from '@/hooks/query/useAuthQuery';
 import Banner from '@@/public/banner/tempBanner.svg';
-import Footer from '../_components/Footer';
+import Footer from '../../../../components/common/Footer';
 import InfoCard from './_components/InfoCard';
 import LinkCard from './_components/LinkCard';
 import Profile from './_components/Profile';

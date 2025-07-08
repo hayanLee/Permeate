@@ -3,12 +3,12 @@ import { Params, Product } from '@/types/products';
 
 import BrandBanner from '@/components/BrandBanner';
 
+import Footer from '@/components/common/Footer/Footer';
 import { CurrentProducts, MdReviews, ProductSlide } from '@/components/Sliders';
 import Toggle from '@/components/Toggle';
 import { Accordion } from '@/components/ui/accordion';
 import { createClient } from '@/supabase/server';
 import infos from '@@/src/mockup/deliveryInfo.json';
-import Footer from '../../_components/Footer';
 import DeliveryOptions from '../_components/DeliveryOptions';
 import { Paying, Share, Wish } from '../_components/DetailButtons';
 import DetailTabs from '../_components/DetailTabs';

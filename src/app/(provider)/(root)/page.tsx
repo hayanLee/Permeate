@@ -3,7 +3,7 @@ import BrandBanner from '@/components/BrandBanner';
 import { BannerSlide, CategoryProducts, CategorySection, CurrentProducts, MdReviews } from '@/components/Sliders';
 
 import { EventLinkCard } from '@/components/Card';
-import Footer from './_components/Footer';
+import Footer from '@/components/common/Footer/Footer';
 
 const RootPage = () => {
   return (

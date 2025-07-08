@@ -1,6 +1,6 @@
 import SupportImg from '@/assets/support.png';
 import Image from 'next/image';
-import Footer from '../../_components/Footer';
+import Footer from '../../../../../components/common/Footer';
 
 const SupportPage = () => {
   return (
