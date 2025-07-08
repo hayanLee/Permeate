@@ -1,23 +1,14 @@
-import BrandBanner from '@/components/BrandBanner';
-
-import { BannerSlide, CategoryProducts, CategorySection, CurrentProducts, MdReviews } from '@/components/Sliders';
-
 import { EventLinkCard } from '@/components/Card';
 import Footer from '@/components/common/Footer/Footer';
+import { BannerSlide, CategoryProducts, CategorySection, CurrentProducts, MdReviews } from '@/components/Sliders';
 
 const RootPage = () => {
   return (
-    <main className="max-w-[600px] mx-auto my-0 h-full w-full overflow-hidden">
+    <main className="bg-white w-full h-full">
       <BannerSlide />
       <EventLinkCard />
 
       <div className="flex flex-col gap-y-16">
-        <BrandBanner>
-          <div className="w-full flex-center text-xl font-bold">
-            <span className="text-white">행사중인 브랜드 한번에 몰아보기 &gt;</span>
-          </div>
-        </BrandBanner>
-
         {/* 현재 판매중인 상품 */}
         <CurrentProducts title={'지금 가장 인기 있는 제품'} option="order" />
         <CurrentProducts title={'방금 출시된 제품'} option="recent" />
