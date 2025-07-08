@@ -17,7 +17,7 @@ const FilterNavMenu = ({ children, onClick, isActive }: PropsWithChildren<Filter
       <p className="text-[14px]">{children}</p>
       <ArrowButtonSVG
         height="7.111px"
-        className={`ml-[8px] flex items-center justify-center scale-150 pt-[1px] ${isActive ? 'rotate-180' : ''}`}
+        className={`ml-[8px] flex items-center justify-center scale-150 pt-px ${isActive ? 'rotate-180' : ''}`}
       />
     </button>
   );
