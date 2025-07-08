@@ -1,6 +1,5 @@
 'use client';
 import Loading from '@/components/Loading';
-import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { HOME } from '@/constant/pathname';
@@ -17,7 +16,7 @@ function SignUpCompletePage() {
   } = loggedUser;
   return (
     <div>
-      <Navbar title="로그인" />
+      <PageHeader title="로그인" />
 
       <div className="px-12">
         <Tabs defaultValue="c">

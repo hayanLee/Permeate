@@ -1,5 +1,4 @@
 'use client';
-import Navbar from '@/components/Navbar';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -32,7 +31,7 @@ const AgreementPage = () => {
 
   return (
     <>
-      <Navbar title="회원가입" />
+      <PageHeader title="회원가입" />
       <div className="px-[50px]">
         <Tabs defaultValue="a">
           <TabsList className="flex">

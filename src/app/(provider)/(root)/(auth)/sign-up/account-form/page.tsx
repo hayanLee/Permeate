@@ -1,7 +1,6 @@
 'use client';
 import Input from '@/components/Input';
 import Loading from '@/components/Loading';
-import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { AUTH_SIGN_UP_EMAIL_CONFIRM_PATHNAME } from '@/constant/pathname';
@@ -97,7 +96,7 @@ const AccountForm = () => {
 
   return (
     <div>
-      <Navbar title="회원가입" />
+      <PageHeader title="회원가입" />
 
       <div className="px-12">
         <Tabs defaultValue="b">

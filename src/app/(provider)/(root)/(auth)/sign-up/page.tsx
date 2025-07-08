@@ -1,7 +1,7 @@
 'use client';
 
 import signUpImg from '@/assets/sign-up.png';
-import Navbar from '@/components/Navbar';
+import { PageHeader } from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { AUTH_SIGN_UP_AGREEMENT_PATHNAME } from '@/constant/pathname';
 import { useAuthMutation } from '@/hooks/mutation';
@@ -14,7 +14,7 @@ const SignUpPage = () => {
   const handleSignUp = (provider: Provider) => logInWithProviderMutation(provider);
   return (
     <>
-      <Navbar title="회원가입" />
+      <PageHeader title="회원가입" />
 
       <Image src={signUpImg} width={600} height={600} alt="회원가입 해택" />
 

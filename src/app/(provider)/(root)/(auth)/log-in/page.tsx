@@ -1,6 +1,6 @@
 'use client';
 import Input from '@/components/Input';
-import Navbar from '@/components/Navbar';
+import { PageHeader } from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { AUTH_SIGN_UP_PATHNAME } from '@/constant/pathname';
@@ -28,7 +28,7 @@ const LogInPage = () => {
   return (
     <>
       <div className="flex flex-col grow">
-        <Navbar title="로그인" />
+        <PageHeader title="로그인" />
         <Tabs defaultValue="member" className="px-[50px]">
           <TabsList className="flex">
             <TabsTrigger value="member">가입 회원</TabsTrigger>

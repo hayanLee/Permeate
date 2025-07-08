@@ -1,7 +1,6 @@
 'use client';
 
 import Input from '@/components/Input';
-import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
 import { AUTH_SIGN_UP_AGREEMENT_PATHNAME } from '@/constant/pathname';
 import { useAuthMutation } from '@/hooks/mutation';
@@ -68,7 +67,7 @@ const EmailConfirmPage = () => {
 
   return (
     <>
-      <Navbar title="이메일 인증" />
+      <PageHeader title="이메일 인증" />
       <div className="px-12">
         <div className="mt-14">
           <h3 className="py-5 border-b">인증 받을 메일 주소</h3>
