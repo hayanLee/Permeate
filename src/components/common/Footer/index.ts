@@ -1,1 +1,2 @@
-export { default } from './Footer';
+export { default as ContactSection } from './ContactSection';
+export { default as PolicyInfo } from './PolicyInfo';

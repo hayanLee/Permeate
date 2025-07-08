@@ -1,5 +1,5 @@
 import { EventLinkCard } from '@/components/Card';
-import Footer from '@/components/common/Footer/Footer';
+import { ContactSection, PolicyInfo } from '@/components/common/Footer';
 import { BannerSlide, CategoryProducts, CategorySection, CurrentProducts, MdReviews } from '@/components/Sliders';
 
 const RootPage = () => {
@@ -8,7 +8,7 @@ const RootPage = () => {
       <BannerSlide />
       <EventLinkCard />
 
-      <div className="flex flex-col gap-y-16">
+      <div className="flex flex-col">
         {/* 현재 판매중인 상품 */}
         <CurrentProducts title={'지금 가장 인기 있는 제품'} option="order" />
         <CurrentProducts title={'방금 출시된 제품'} option="recent" />
@@ -21,7 +21,8 @@ const RootPage = () => {
 
         <MdReviews />
 
-        <Footer />
+        <ContactSection />
+        <PolicyInfo />
       </div>
     </main>
   );
