@@ -1,9 +1,9 @@
-import Navbar from '@/components/Navbar';
+import { PageHeader } from '@/components/Navigation';
 
 const ReviewPage = () => {
   return (
     <div className="relative max-w-[600px] flex flex-col h-full">
-      <Navbar title="후기" isHome />
+      <PageHeader title="후기" showHomeButton />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 'use client';
 import ProductCard from '@/components/Card/ProductCard';
 import Loading from '@/components/Loading';
-import Navbar from '@/components/Navbar';
+import { PageHeader } from '@/components/Navigation';
 import useUserWishesQuery, { UserWish } from '@/hooks/query/mypage/useUserWishesQuery';
 import { cn } from '@/utils/cn';
 import Banner from '@@/public/banner/tempBanner.svg';
@@ -17,7 +17,7 @@ const WishListPage = () => {
 
   return (
     <div>
-      <Navbar title="찜한 상품" isHome />
+      <PageHeader title="찜한 상품" showHomeButton />
       <Banner className="mx-auto my-4" />
 
       <div className="px-[50px]">
@@ -44,7 +44,9 @@ const WishListPage = () => {
             </div>
           </div>
           <div className="grid grid-cols-2 place-items-center gap-x-4 gap-y-5">
-            {wishes?.map((item: UserWish) => <ProductCard product={item.Products} key={item.productId} />)}
+            {wishes?.map((item: UserWish) => (
+              <ProductCard product={item.Products} key={item.productId} />
+            ))}
           </div>
         </div>
       </div>

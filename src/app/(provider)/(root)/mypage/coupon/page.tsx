@@ -1,6 +1,6 @@
 'use client';
 import Loading from '@/components/Loading';
-import Navbar from '@/components/Navbar';
+import { PageHeader } from '@/components/Navigation';
 import useCouponQuery from '@/hooks/query/mypage/useCouponQuery';
 import useAuthQuery from '@/hooks/query/useAuthQuery';
 import Arrow from '@@/public/arrow/arrow-bottom.svg';
@@ -17,7 +17,7 @@ const CouponListPage = () => {
 
   return (
     <div>
-      <Navbar title="쿠폰" isHome />
+      <PageHeader title="쿠폰" showHomeButton />
       <Profile />
 
       <div className="flex flex-col bg-muted/30 p-5 gap-x-2.5 gap-y-1">
@@ -50,7 +50,9 @@ const CouponListPage = () => {
 
         {/* 쿠폰 카드 */}
         <div className="mt-8">
-          {coupons?.map((coupon: any) => <CouponCard key={coupon.couponId} coupon={coupon} />)}
+          {coupons?.map((coupon: any) => (
+            <CouponCard key={coupon.couponId} coupon={coupon} />
+          ))}
         </div>
       </div>
     </div>

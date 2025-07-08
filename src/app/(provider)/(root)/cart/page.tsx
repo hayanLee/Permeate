@@ -1,6 +1,6 @@
 'use client';
+import { PageHeader } from '@/components/Navigation';
 
-import Navbar from '@/components/Navbar';
 import { useCartsMutation } from '@/hooks/mutation';
 import { useCartsQuery } from '@/hooks/query';
 import useAuthQuery from '@/hooks/query/useAuthQuery';
@@ -97,7 +97,7 @@ const CartPage = () => {
   if (!localCartList.length) {
     return (
       <>
-        <Navbar title="장바구니" isHome />
+        <PageHeader title="장바구니" showHomeButton />
         <CartEmpty />
       </>
     );
@@ -105,7 +105,7 @@ const CartPage = () => {
 
   return (
     <div className="h-screen">
-      <Navbar title="장바구니" isHome />
+      <PageHeader title="장바구니" showHomeButton />
       <CartSelector cartList={localCartList} deleteCartItem={deleteCartItem} updateCartItem={updateCartItem} />
       <CartList cartList={localCartList} deleteCartItem={deleteCartItem} updateCartItem={updateCartItem} />
       <CartAccordion cartList={localCartList} />

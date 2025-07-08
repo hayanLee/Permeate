@@ -1,6 +1,6 @@
 'use client';
 import Loading from '@/components/Loading';
-import Navbar from '@/components/Navbar';
+import { PageHeader } from '@/components/Navigation';
 import { Accordion } from '@/components/ui/accordion';
 import useOrderListQuery from '@/hooks/query/mypage/useOrderListQuery';
 import { MyOrder } from '@/types/myPage/order';
@@ -18,7 +18,7 @@ const OrderListPage = () => {
 
   return (
     <div>
-      <Navbar title="주문/배송내역" isHome />
+      <PageHeader title="주문/배송내역" showHomeButton />
       <Banner className="mx-auto my-4" />
 
       <div className="px-[50px]">
@@ -48,7 +48,9 @@ const OrderListPage = () => {
         </div>
 
         <Accordion type="single" collapsible>
-          {orders?.map((order: MyOrder) => <OrderCard key={order.orderId} order={order} />)}
+          {orders?.map((order: MyOrder) => (
+            <OrderCard key={order.orderId} order={order} />
+          ))}
         </Accordion>
       </div>
     </div>

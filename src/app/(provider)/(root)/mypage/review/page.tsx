@@ -1,7 +1,7 @@
 'use client';
 
 import Loading from '@/components/Loading';
-import Navbar from '@/components/Navbar';
+import { PageHeader } from '@/components/Navigation';
 import { Accordion } from '@/components/ui/accordion';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useUserReviewsQuery } from '@/hooks/query/mypage';
@@ -18,7 +18,7 @@ const ReviewPage = () => {
 
   return (
     <div>
-      <Navbar title="리뷰" isHome />
+      <PageHeader title="리뷰" showHomeButton />
       <Tabs defaultValue="wrote" className="flex flex-col mx-[50px]">
         <TabsList>
           <TabsTrigger value="writable" className="px-10">
@@ -30,13 +30,17 @@ const ReviewPage = () => {
         </TabsList>
         <TabsContent value="writable">
           <Accordion type="single" collapsible>
-            {orders?.map((order) => <OrderCard key={order.orderId} order={order} review />)}
+            {orders?.map((order) => (
+              <OrderCard key={order.orderId} order={order} review />
+            ))}
           </Accordion>
         </TabsContent>
 
         <TabsContent value="wrote">
           <Accordion type="single" collapsible>
-            {reviews?.map((review) => <ReviewItem review={review} key={review.reviewId} />)}
+            {reviews?.map((review) => (
+              <ReviewItem review={review} key={review.reviewId} />
+            ))}
           </Accordion>
         </TabsContent>
       </Tabs>

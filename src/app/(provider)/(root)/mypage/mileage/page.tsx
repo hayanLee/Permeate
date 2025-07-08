@@ -1,5 +1,5 @@
 'use client';
-import Navbar from '@/components/Navbar';
+import { PageHeader } from '@/components/Navigation';
 import useAuthQuery from '@/hooks/query/useAuthQuery';
 import InfoCard from '../_components/InfoCard';
 import Profile from '../_components/Profile';
@@ -9,7 +9,7 @@ const MileageListPage = () => {
   const name = loggedUser?.userData.name || '';
   return (
     <div>
-      <Navbar title="마일리지" isHome />
+      <PageHeader title="마일리지" showHomeButton />
       <Profile />
 
       <div className="flex flex-col bg-muted/30 p-5 gap-x-2.5 gap-y-1">

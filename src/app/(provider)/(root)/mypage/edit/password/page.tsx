@@ -1,7 +1,7 @@
 'use client';
 import Input from '@/components/Input';
 import Loading from '@/components/Loading';
-import Navbar from '@/components/Navbar';
+import { PageHeader } from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { MYPAGE_EDIT_PATHNAME } from '@/constant/pathname';
 import { useAuthMutation } from '@/hooks/mutation';
@@ -39,7 +39,7 @@ const PasswordEditPage = () => {
 
   return (
     <div>
-      <Navbar title="설정" isHome />
+      <PageHeader title="설정" showHomeButton />
       <div className="mx-[50px] mt-20">
         <h3 className="border-b py-5">비밀번호 입력</h3>
         <div className="flex items-center">

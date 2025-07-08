@@ -1,7 +1,7 @@
 'use client';
 
 import { getAddressInfoByAddressId } from '@/api/addresses';
-import Navbar from '@/components/Navbar';
+import { PageHeader } from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import useAddressMutation from '@/hooks/mutation/useAddressMutation';
@@ -98,7 +98,7 @@ const AddressEditPageContent = () => {
 
   return (
     <>
-      <Navbar title="배송지 수정" isHome />
+      <PageHeader title="배송지 수정" showHomeButton />
       <div className="px-[50px] pt-[120px] flex flex-col items-center">
         <div className="text-[20px] pb-[64px] w-full">
           <p className="font-bold">받는 사람</p>

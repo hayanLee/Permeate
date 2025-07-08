@@ -1,6 +1,6 @@
 'use client';
 import Loading from '@/components/Loading';
-import Navbar from '@/components/Navbar';
+import { PageHeader } from '@/components/Navigation';
 import {
   AUTH_LOG_IN_PATHNAME,
   MYPAGE_ADDRESS_PATHNAME,
@@ -15,7 +15,6 @@ import { useUserReviewsQuery } from '@/hooks/query/mypage';
 import useCouponQuery from '@/hooks/query/mypage/useCouponQuery';
 import useAuthQuery from '@/hooks/query/useAuthQuery';
 import Banner from '@@/public/banner/tempBanner.svg';
-import Footer from '../../../../components/common/Footer';
 import InfoCard from './_components/InfoCard';
 import LinkCard from './_components/LinkCard';
 import Profile from './_components/Profile';
@@ -44,7 +43,7 @@ const MyMainPage = () => {
 
   return (
     <div className="flex flex-col">
-      <Navbar title="마이페이지" isHome />
+      <PageHeader title="마이페이지" showHomeButton />
       <Profile />
 
       <div className="flex bg-muted/30 p-5 gap-x-2.5">
@@ -68,7 +67,6 @@ const MyMainPage = () => {
         );
       })}
       <div className="bg-muted/30 h-2.5"></div>
-      <Footer />
     </div>
   );
 };

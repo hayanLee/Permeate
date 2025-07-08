@@ -1,10 +1,10 @@
-import Navbar from '@/components/Navbar';
+import { PageHeader } from '@/components/Navigation';
 import Link from 'next/link';
 
 const OrderError = () => {
   return (
     <>
-      <Navbar title="주문실패" isHome />
+      <PageHeader title="주문실패" showHomeButton />
 
       <div className="max-w-[600px] h-[calc(100vh-70px)] flex flex-col items-center justify-center">
         <div className="h-full flex flex-col justify-center items-center gap-9">

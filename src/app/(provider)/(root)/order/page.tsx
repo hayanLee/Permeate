@@ -1,7 +1,7 @@
 'use client';
+import { PageHeader } from '@/components/Navigation';
 
 import { kakaoPayment, tossPayment } from '@/api/payment';
-import Navbar from '@/components/Navbar';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Checkbox } from '@/components/ui/checkbox';
 import {
@@ -202,7 +202,7 @@ const DeliveryPage = () => {
   if (orderStatus === 'IDLE') {
     return (
       <>
-        <Navbar title="배송지" isHome />
+        <PageHeader title="배송지" showHomeButton />
         <div className="relative max-w-[600px] pt-[60px] pb-[120px] w-full flex flex-col gap-5">
           <div>
             <div className="p-5 border-b-[0.5px]">

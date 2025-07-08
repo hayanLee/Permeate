@@ -1,6 +1,6 @@
 'use client';
 import Loading from '@/components/Loading';
-import Navbar from '@/components/Navbar';
+import { PageHeader } from '@/components/Navigation';
 import { AUTH_LOG_IN_PATHNAME, MYPAGE_INFO_EDIT_PATHNAME, MYPAGE_PASSWORD_EDIT_PATHNAME } from '@/constant/pathname';
 import useAuthQuery from '@/hooks/query/useAuthQuery';
 import LinkCard from '../_components/LinkCard';
@@ -15,7 +15,7 @@ const UserInfoEditPage = () => {
   if (isPending) <Loading />;
   return (
     <div>
-      <Navbar title="설정" isHome />
+      <PageHeader title="설정" showHomeButton />
       <Profile />
 
       <div className="flex flex-col bg-slate-100">

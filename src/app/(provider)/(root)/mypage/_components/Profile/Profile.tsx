@@ -3,15 +3,13 @@ import Loading from '@/components/Loading';
 import { AUTH_LOG_IN_PATHNAME } from '@/constant/pathname';
 import { useAuthMutation } from '@/hooks/mutation';
 import useAuthQuery from '@/hooks/query/useAuthQuery';
-import useAlert from '@/hooks/useAlert';
 import ProfileImg from '@@/public/profile/profile-sm.svg';
 import Link from 'next/link';
+import { toast } from 'sonner';
 
 const Profile = () => {
-  const { showInfoAlert } = useAlert();
   const { logOutMutation } = useAuthMutation();
   const { data: loggedUser, isPending } = useAuthQuery();
-  const handleClick = () => showInfoAlert('준비중입니다!');
   const handleLogOut = () => logOutMutation();
   if (isPending) return <Loading />;
   const name = loggedUser?.userData.name;
@@ -38,7 +36,7 @@ const Profile = () => {
                 <span className="text-accent text-xl">LV 3.5%적립 무료 배송 </span>
                 <span
                   className="text-muted cursor-pointer text-xl  hover:brightness-90 active:brightness-110"
-                  onClick={handleClick}
+                  onClick={() => toast.info('준비중입니다!')}
                 >
                   등급 해택 더보기
                 </span>

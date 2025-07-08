@@ -1,6 +1,6 @@
 'use client';
 import Loading from '@/components/Loading';
-import Navbar from '@/components/Navbar';
+import { PageHeader } from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { MYPAGE_ADDRESS_EDIT_PATHNAME } from '@/constant/pathname';
 import useAddressMutation from '@/hooks/mutation/useAddressMutation';
@@ -20,7 +20,7 @@ const AddressListPage = () => {
   if (isPending) return <Loading />;
   return (
     <>
-      <Navbar title="배송지 목록" isHome />
+      <PageHeader title="배송지 목록" showHomeButton />
       <div className="px-5 py-[60px]">
         <div>
           <Button variant="outline" className="w-full h-[60px] text-[20px] text-[#302A28]" asChild>
