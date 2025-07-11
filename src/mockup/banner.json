@@ -1,27 +1,27 @@
 [
   {
-    "ThumbnailImg": "/banner/event/discount.svg",
-    "eventLink": "https://www.google.com",
+    "ThumbnailImg": "/images/quickNav/001.png",
+    "eventLink": "#",
     "title": "여성 베스트"
   },
   {
-    "ThumbnailImg": "/banner/event/sale.svg",
-    "eventLink": "https://www.google.com",
+    "ThumbnailImg": "/images/quickNav/002.png",
+    "eventLink": "#",
     "title": "남성 베스트"
   },
   {
-    "ThumbnailImg": "/banner/event/first.svg",
-    "eventLink": "https://www.google.com",
+    "ThumbnailImg": "/images/quickNav/003.png",
+    "eventLink": "#",
     "title": "향수"
   },
   {
-    "ThumbnailImg": "/banner/event/coupon.svg",
-    "eventLink": "https://www.google.com",
-    "title": "캔들"
+    "ThumbnailImg": "/images/quickNav/004.png",
+    "eventLink": "#",
+    "title": "이벤트"
   },
   {
-    "ThumbnailImg": "/banner/event/event.svg",
-    "eventLink": "https://www.google.com",
-    "title": "인센스"
+    "ThumbnailImg": "/images/quickNav/005.png",
+    "eventLink": "#",
+    "title": "캔들"
   }
 ]
