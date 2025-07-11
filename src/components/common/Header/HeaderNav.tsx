@@ -1,25 +1,25 @@
-'use client';
-
 import { Button } from '@/components/ui/button';
-import { CART, CATEGORY, HOME, MYPAGE } from '@/constant/pathname';
+import { AUTH_LOG_IN_PATHNAME, CART, CATEGORY, HOME, MYPAGE } from '@/constant/pathname';
+import { createClient } from '@/supabase/server';
 import Logo from '@@/public/header/Logo.svg';
-import { ArrowLeft, Menu, ShoppingCart, UserRound } from 'lucide-react';
+import { LogIn, Menu, ShoppingCart, UserRound } from 'lucide-react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { BackButton } from './BackButton';
 
 interface HeaderNavProps {
   isBackBtn?: boolean;
 }
 
-const HeaderNav = ({ isBackBtn = false }: HeaderNavProps) => {
-  const router = useRouter();
-  const handleBackBtn = () => router.back();
+const HeaderNav = async ({ isBackBtn = false }: HeaderNavProps) => {
+  const supabase = createClient();
+  const { data: authData } = await supabase.auth.getUser();
+  const isLoggedIn = !!authData.user;
 
   return (
     <div className="p-4 grid grid-cols-3 items-center bg-white">
       <Button variant="ghost" size="icon" asChild>
         {isBackBtn ? (
-          <ArrowLeft onClick={handleBackBtn} className="cursor-pointer" />
+          <BackButton />
         ) : (
           <Link href={CATEGORY}>
             <Menu />
@@ -35,17 +35,27 @@ const HeaderNav = ({ isBackBtn = false }: HeaderNavProps) => {
 
       <div className="flex justify-end items-center gap-x-2">
         <div></div>
-        <Button variant="ghost" size="icon" asChild>
-          <Link href={CART}>
-            <ShoppingCart />
-          </Link>
-        </Button>
+        {isLoggedIn ? (
+          <>
+            <Button variant="ghost" size="icon" asChild>
+              <Link href={CART}>
+                <ShoppingCart />
+              </Link>
+            </Button>
 
-        <Button variant="ghost" size="icon" asChild>
-          <Link href={MYPAGE}>
-            <UserRound />
-          </Link>
-        </Button>
+            <Button variant="ghost" size="icon" asChild>
+              <Link href={MYPAGE}>
+                <UserRound />
+              </Link>
+            </Button>
+          </>
+        ) : (
+          <Button variant="ghost" size="icon" asChild>
+            <Link href={AUTH_LOG_IN_PATHNAME}>
+              <LogIn />
+            </Link>
+          </Button>
+        )}
       </div>
     </div>
   );

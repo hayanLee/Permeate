@@ -12,7 +12,7 @@ const InfoCard = ({ title, href, children, sm, className }: PropsWithChildren<In
   const content = (
     <>
       <p className="text-base">{title}</p>
-      <p className={cn('text-xl text-accent font-semibold', { 'text-lg font-bold': sm })}>{children}</p>
+      <p className={cn('text-xl font-semibold', { 'text-lg font-bold': sm })}>{children}</p>
     </>
   );
 

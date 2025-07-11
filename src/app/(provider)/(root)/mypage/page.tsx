@@ -1,4 +1,3 @@
-'use client';
 import Loading from '@/components/Loading';
 import { PageHeader } from '@/components/Navigation';
 import {
@@ -11,12 +10,10 @@ import {
   MYPAGE_REVIEW_PATHNAME,
   MYPAGE_WISH_PATHNAME
 } from '@/constant/pathname';
-import { useUserReviewsQuery } from '@/hooks/query/mypage';
-import useCouponQuery from '@/hooks/query/mypage/useCouponQuery';
-import useAuthQuery from '@/hooks/query/useAuthQuery';
+import { createClient } from '@/supabase/server';
 import Banner from '@@/public/banner/tempBanner.svg';
 import InfoCard from './_components/InfoCard';
-import LinkCard from './_components/LinkCard';
+import { MyPageContent } from './_components/MyPageContent';
 import Profile from './_components/Profile';
 
 const LINKS = [
@@ -28,16 +25,41 @@ const LINKS = [
   { title: '배송지 관리', href: MYPAGE_ADDRESS_PATHNAME }
 ];
 
-const MyMainPage = () => {
-  const { data: loggedUser, isPending: isAuthPending } = useAuthQuery();
-  const { data: coupons, isPending: isCouponPending } = useCouponQuery();
-  const { data: reviews, isPending: isReviewPending } = useUserReviewsQuery();
+const MyMainPage = async () => {
+  const supabase = createClient();
+  const { data: authData } = await supabase.auth.getUser();
 
-  if (isAuthPending || (loggedUser && isCouponPending && isReviewPending)) return <Loading />;
+  if (!authData.user) {
+    return (
+      <div className="flex flex-col">
+        <PageHeader title="마이페이지" showHomeButton />
+        <Profile />
+        <div className="flex flex-col items-center justify-center py-20">
+          <p className="text-lg mb-4">로그인이 필요한 서비스입니다.</p>
+          <a href={AUTH_LOG_IN_PATHNAME} className="text-accent underline">
+            로그인하기
+          </a>
+        </div>
+      </div>
+    );
+  }
 
-  const mileage = loggedUser?.userData.mileage;
+  // 사용자 정보 조회
+  const { data: userData } = await supabase.from('Users').select('*').eq('id', authData.user.id).single();
 
-  const getHref = (path: string) => (loggedUser ? path : AUTH_LOG_IN_PATHNAME);
+  if (!userData) {
+    return <Loading />;
+  }
+
+  // 쿠폰 데이터 조회
+  const { data: coupons } = await supabase.from('Coupons').select('*').eq('userId', authData.user.id);
+
+  // 리뷰 데이터 조회
+  const { data: reviews } = await supabase.from('Reviews').select('*').eq('userId', authData.user.id);
+
+  const mileage = userData.mileage;
+  const couponCount = coupons?.length || 0;
+  const reviewCount = reviews?.length || 0;
 
   return (
     <div className="flex flex-col">
@@ -45,26 +67,18 @@ const MyMainPage = () => {
       <Profile />
 
       <div className="flex bg-muted/30 p-5 gap-x-2.5">
-        <InfoCard title="보유 마일리지" href={getHref(MYPAGE_MILEAGE_PATHNAME)}>
+        <InfoCard title="보유 마일리지" href={MYPAGE_MILEAGE_PATHNAME}>
           {mileage || '-'}p
         </InfoCard>
-        <InfoCard title="쿠폰" href={getHref(MYPAGE_COUPON_PATHNAME)}>
-          {coupons?.length || '-'}
+        <InfoCard title="쿠폰" href={MYPAGE_COUPON_PATHNAME}>
+          {couponCount}
         </InfoCard>
-        <InfoCard title="후기" href={getHref(MYPAGE_REVIEW_PATHNAME)}>
-          {reviews?.length || '-'}
+        <InfoCard title="후기" href={MYPAGE_REVIEW_PATHNAME}>
+          {reviewCount}
         </InfoCard>
       </div>
       <Banner className="mx-auto my-4" />
-      {LINKS.map((link, idx) => {
-        return (
-          <div key={link.title}>
-            {idx % 3 === 0 && idx !== 0 && <div className="bg-muted/30 h-2.5"></div>}
-            <LinkCard title={link.title} href={loggedUser ? link.href : AUTH_LOG_IN_PATHNAME} />
-          </div>
-        );
-      })}
-      <div className="bg-muted/30 h-2.5"></div>
+      <MyPageContent links={LINKS} />
     </div>
   );
 };

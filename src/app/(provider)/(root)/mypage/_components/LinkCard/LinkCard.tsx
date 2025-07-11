@@ -8,7 +8,7 @@ interface LinkCardProps {
 
 const LinkCard = ({ title, href = '' }: LinkCardProps) => {
   return (
-    <Link className="flex items-center px-12 py-5 bg-white border-b" href={href}>
+    <Link className="flex items-center px-10 py-5 bg-white border-b hover:bg-gray-100/50" href={href}>
       <p className="grow">{title}</p>
       <Arrow />
     </Link>
