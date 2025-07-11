@@ -1,4 +1,3 @@
-import BannerImage from '@/components/common/BannerImage';
 import Image from 'next/image';
 import { PropsWithChildren } from 'react';
 import PathAwareHeader from './_components/PathAwareHeader';
@@ -13,10 +12,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
 
       {/* 이벤트 배너 */}
       <div className="h-full flex-col justify-center gap-3 xl:flex hidden">
-        <BannerImage src="/images/banner/main/main_banner.webp" alt="메인 배너" width={500} height={500} />
-        <BannerImage src="/images/banner/main/event_banner_1.webp" alt="이벤트 배너1" width={500} height={120} />
-        <BannerImage src="/images/banner/main/event_banner_2.webp" alt="이벤트 배너2" width={500} height={120} />
-        <BannerImage src="/images/banner/main/event_banner_3.webp" alt="이벤트 배너3" width={500} height={120} />
+        <Image src="/images/banner/main/main_banner.webp" alt="메인 배너" width={500} height={500} />
       </div>
 
       {/* 메인 컨텐츠 */}
