@@ -21,8 +21,6 @@ import Profile from './_components/Profile';
 
 const LINKS = [
   { title: '주문/배송 내역', href: MYPAGE_ORDERS_PATHNAME },
-  { title: '취소/반품 내역 (미지원)' },
-  { title: '환불 / 고객상담 (미지원)' },
   { title: '찜 리스트', href: MYPAGE_WISH_PATHNAME },
   { title: '쿠폰 내역', href: MYPAGE_COUPON_PATHNAME },
   { title: '마일리지 내역', href: MYPAGE_MILEAGE_PATHNAME },
